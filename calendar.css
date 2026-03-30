@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffd6ea, #ffeef7);
+  color: #ff6b9c;
+}
+
+.card {
+  background: #fff7fb;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.25);
+  padding: 32px 24px 28px;
+  max-width: 520px;
+  width: 94%;
+  border: 2px solid #ffc0d9;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "★";
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 32px;
+  opacity: 0.15;
+  color: #ff9ec0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #ff8fb3;
+  margin-bottom: 18px;
+}
+
+.month-label {
+  margin: 10px auto 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #ffe4f1;
+  border: 1px solid #ffc5dd;
+  color: #ff5f9a;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.month-label span {
+  font-size: 1.1rem;
+}
+
+.calendar {
+  margin: 0 auto 14px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ffd0e4;
+  background: #fff;
+}
+
+.calendar-header {
+  background: #ffb6d9;
+  color: white;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.calendar-header span.heart {
+  font-size: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead {
+  background: #ffe5f2;
+}
+
+th, td {
+  width: 14.285%;
+  text-align: center;
+  padding: 8px 0;
+}
+
+th {
+  color: #ff6fa0;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+td {
+  height: 40px;
+  position: relative;
+  color: #ff8fb3;
+}
+
+td.empty {
+  background: #fffafc;
+}
+
+.special-day {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: bold;
+}
+
+.special-day {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1.05rem;      /* a bit larger than other dates */
+  transform: translateY(-1px);
+}
+
+.special-day::before {
+  content: "";
+  position: absolute;
+  inset: 0;                /* pill right around the number */
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff82b5, #ff5f9a);
+  z-index: -1;
+  /* removed box-shadow to remove glow */
+}
+
+/* cute heart above the date */
+.special-day::after {
+  content: "❤";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #ff4f91;
+}
+
+.special-note {
+  font-size: 0.9rem;
+  color: #ff7fae;
+  margin-bottom: 16px;
+  margin-top: 6px;
+}
+
+.special-note span {
+  font-weight: bold;
+  color: #ff4f91;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff82b5;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 15px rgba(255, 130, 181, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+.btn.secondary {
+  background: #ffe5f2;
+  color: #ff6b9c;
+  box-shadow: none;
+  border: 1px solid #ffc5dd;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(255, 130, 181, 0.6);
+}
+
+.btn.secondary:hover {
+  background: #ffd5e9;
+  box-shadow: 0 4px 10px rgba(255, 130, 181, 0.3);
+}
+
+.tiny {
+  font-size: 0.75rem;
+  color: #ff9ec0;
+  margin-top: 8px;
+}
