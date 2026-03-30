@@ -12,6 +12,7 @@ body {
   justify-content: center;
   background: radial-gradient(circle at top, #ffe6f3 0, #ffd1e7 45%, #ffbedf 100%);
   color: #ff6b9c;
+  padding: 16px;
 }
 
 .card {
@@ -20,7 +21,7 @@ body {
   box-shadow: 0 10px 25px rgba(255, 105, 180, 0.25);
   padding: 32px 26px 26px;
   max-width: 540px;
-  width: 94%;
+  width: 100%;
   border: 2px solid #ffc0d9;
   position: relative;
   overflow: hidden;
@@ -160,6 +161,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -201,9 +203,23 @@ h1 {
   color: #ff9ec0;
 }
 
+/* Mobile adjustments */
 @media (max-width: 480px) {
+  .card {
+    padding: 24px 16px 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
   .timeline::before {
-    left: 20px;
+    left: 18px;
   }
 
   .timeline-time {
@@ -211,7 +227,12 @@ h1 {
     font-size: 0.8rem;
   }
 
-  .card {
-    padding: 26px 18px 20px;
+  .timeline-content {
+    padding: 8px 10px;
+  }
+
+  .buttons .btn {
+    flex: 1 1 120px;
+    text-align: center;
   }
 }
