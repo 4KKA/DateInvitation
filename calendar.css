@@ -12,6 +12,7 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, #ffd6ea, #ffeef7);
   color: #ff6b9c;
+  padding: 16px;
 }
 
 .card {
@@ -20,7 +21,7 @@ body {
   box-shadow: 0 10px 25px rgba(255, 105, 180, 0.25);
   padding: 32px 24px 28px;
   max-width: 520px;
-  width: 94%;
+  width: 100%;
   border: 2px solid #ffc0d9;
   text-align: center;
   position: relative;
@@ -100,7 +101,8 @@ thead {
   background: #ffe5f2;
 }
 
-th, td {
+th,
+td {
   width: 14.285%;
   text-align: center;
   padding: 8px 0;
@@ -127,29 +129,21 @@ td.empty {
   z-index: 1;
   color: #fff;
   font-weight: bold;
-}
-
-.special-day {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  font-weight: bold;
   display: inline-block;
-  font-size: 1.05rem;      /* a bit larger than other dates */
+  font-size: 1.05rem;      /* bigger than others */
   transform: translateY(-1px);
 }
 
 .special-day::before {
   content: "";
   position: absolute;
-  inset: 0;                /* pill right around the number */
+  inset: 0;
   border-radius: 999px;
   background: linear-gradient(135deg, #ff82b5, #ff5f9a);
   z-index: -1;
-  /* removed box-shadow to remove glow */
 }
 
-/* cute heart above the date */
+/* Heart above the date */
 .special-day::after {
   content: "❤";
   position: absolute;
@@ -177,6 +171,7 @@ td.empty {
   justify-content: center;
   gap: 10px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -215,4 +210,39 @@ td.empty {
   font-size: 0.75rem;
   color: #ff9ec0;
   margin-top: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .card {
+    padding: 24px 14px 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th,
+  td {
+    padding: 6px 0;
+  }
+
+  .month-label {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .btn {
+    flex: 1 1 100px;
+    padding: 9px 12px;
+  }
 }
